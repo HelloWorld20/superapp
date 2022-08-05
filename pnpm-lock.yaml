@@ -1,0 +1,9 @@
+lockfileVersion: 5.4
+
+importers:
+
+  packages/template-apart-radar:
+    specifiers:
+      '@ww/utils-web': workspace:^1.0.0
+    dependencies:
+      '@ww/utils-web': link:../utils-web
