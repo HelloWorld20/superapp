@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd packages/template-apart-radar && npm run dev"
+    "test": "cd packages/template-apart-radar && npm run dev",
+    "clean": "npx npkill"
   },
   "keywords": [],
   "author": "",

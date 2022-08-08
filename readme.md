@@ -25,13 +25,31 @@ yarn start
 
 1. 安装全局公用包
 
-  pnpm install react react-dom -w
+  pnpm add react react-dom -w
 
 2. 安装到某个package
 
-  pnpm i dayjs -r --filter @ww/utils-web
+  pnpm add dayjs -r --filter @ww/utils-web
 
-  pnpm install @ww/utils-web -r --filter @ww/template-apart-radar
+  pnpm add @ww/utils-web -r --filter @ww/template-apart-radar
 
 后面跟的是包名称，也就是package.json的name参数
 
+
+## todo
+
+1. 目前template-\*\*类型package用tools-build-react时，需要在template-\*\*安装tools-build-react的依赖（打包依赖）。不知如何处理。如果在全局安装打包依赖，则破坏独立结构，或者需要cli来管理。
+
+
+## issue
+
+### 关于pnpm install 出现 unmet peer
+
+[官方回答](https://github.com/pnpm/pnpm/issues/4183#issuecomment-1008252214)
+
+解决方案按照意思应该是要根据提示安装一遍
+
+* `unmet peer` shows up but project works. The declared peerDependency is installed but installed version doesn't match declared version, but luckily the installed version doesn't have break changes which would break the package declared peerDependency.
+* `missing peer` shows up but project works.
+  * your project is just using part of your dependency which doesn't require its peerDependency.
+  * your environment have these peerDependency installed globally because node will look up dependency all the way to root (but pnpm don't know about it).

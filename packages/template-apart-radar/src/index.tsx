@@ -1,3 +1,9 @@
-const a =  require('@ww/utils-web/index')
+import React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import Route from './route';
 
-console.log('a', a)
+// ReactDOM.createRoot()
+
+ReactDOM.createRoot(document.getElementById('app')!).render(<Route />)
+
+
