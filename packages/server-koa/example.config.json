@@ -1,0 +1,41 @@
+{
+  "route": {
+    "prefix": "/api/demo"
+  },
+  "port": 4000,
+  "mongo": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "user": "user",
+    "password": "password"
+  },
+  "redis": {
+    "app": {
+      "server": {
+        "host": "127.0.0.1",
+        "name": "app",
+        "port": 6379,
+        "password": "password"
+      }
+    },
+    "session": {
+      "server": {
+        "host": "127.0.0.1",
+        "name": "session",
+        "port": 6379,
+        "password": "password"
+      }
+    }
+  },
+  "cos": {
+    "SecretId": "SecretId",
+    "SecretKey": "SecretKey",
+    "Region": "ap-chengdu",
+    "Bucket": {
+      "app": "app-1234567890",
+      "market": "market-1234567890"
+    }
+  },
+  "CDN": "http://app-1234567890.cos.ap-chengdu.myqcloud.com",
+  "allow_origins": ["http://localhost:3000", "http://localhost:3001"]
+}

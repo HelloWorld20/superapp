@@ -35,6 +35,7 @@ yarn start
 
 后面跟的是包名称，也就是package.json的name参数
 
+**-r是recursive的意思，递归的意思**
 
 ## todo
 
