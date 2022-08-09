@@ -4,9 +4,9 @@
 
 ## 使用方法
 
-1. 在另外的静态（template-）package 里安装此 package
+1. 在另外的静态（static-）package 里安装此 package
 
-   pnpm install @ww/tools-build-react -r --filter @ww/template-apart-radar
+   pnpm install @ww/tools-build-react -r --filter @ww/static-apart-radar
 
 2. 在静态 package 里新建文件`webpack.config.js`
 

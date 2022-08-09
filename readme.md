@@ -9,7 +9,7 @@
 * config: 配置中心
 * framework: 基于express的后端框架以及工具函数
 * server: 后端接口服务
-* template-apart-radar: 广州看房dashboard
+* static-apart-radar: 广州看房dashboard
 * tools-build: 基于webpack4的打包工具
 * tools-upload-cdn: 上传cdn工具
 * utils: 通用工具函数
@@ -31,7 +31,7 @@ yarn start
 
   pnpm add dayjs -r --filter @ww/utils-web
 
-  pnpm add @ww/utils-web -r --filter @ww/template-apart-radar
+  pnpm add @ww/utils-web -r --filter @ww/static-apart-radar
 
 后面跟的是包名称，也就是package.json的name参数
 
@@ -39,7 +39,7 @@ yarn start
 
 ## todo
 
-1. 目前template-\*\*类型package用tools-build-react时，需要在template-\*\*安装tools-build-react的依赖（打包依赖）。不知如何处理。如果在全局安装打包依赖，则破坏独立结构，或者需要cli来管理。
+1. 目前static-\*\*类型package用tools-build-react时，需要在static-\*\*安装tools-build-react的依赖（打包依赖）。不知如何处理。如果在全局安装打包依赖，则破坏独立结构，或者需要cli来管理。
 
 
 ## issue

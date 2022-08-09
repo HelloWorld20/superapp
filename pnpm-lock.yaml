@@ -13,12 +13,12 @@ importers:
       '@koa/router': ^10.1.1
       '@types/boom': ^7.3.1
       '@types/koa': ^2.13.4
-      '@types/koa__router': ^8.0.7
       '@types/koa-bodyparser': ^5.0.2
       '@types/koa-cors': ^0.0.2
       '@types/koa-logger': ^3.1.1
       '@types/koa-mongo': ^1.9.3
       '@types/koa-router': ^7.4.4
+      '@types/koa__router': ^8.0.7
       '@types/mongodb': 3.6.20
       '@types/node': ^18.6.4
       boom: ^7.3.0
@@ -34,11 +34,11 @@ importers:
       '@koa/router': 10.1.1
       '@types/boom': 7.3.2
       '@types/koa': 2.13.5
-      '@types/koa__router': 8.0.11
       '@types/koa-bodyparser': 5.0.2
       '@types/koa-cors': 0.0.2
       '@types/koa-logger': 3.1.2
       '@types/koa-router': 7.4.4
+      '@types/koa__router': 8.0.11
       boom: 7.3.0
       koa: 2.13.4
       koa-bodyparser: 4.3.0

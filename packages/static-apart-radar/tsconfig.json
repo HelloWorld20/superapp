@@ -17,7 +17,7 @@
     "baseUrl": "../../",
     "paths": {
       "@ww/*": ["packages/*"],
-      "@/*": ["packages/template-apart-radar/src/*"]
+      "@/*": ["packages/static-apart-radar/src/*"]
     }
   },
   "include": ["src"]
