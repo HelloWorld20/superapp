@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd packages/template-apart-radar && npm run dev",
-    "clean": "npx npkill"
+    "start": "cd packages/server-koa && npm run dev",
+    "clean": "npx rimraf node_modules packages/*/node_modules"
   },
   "keywords": [],
   "author": "",

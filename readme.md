@@ -54,3 +54,13 @@ yarn start
 * `missing peer` shows up but project works.
   * your project is just using part of your dependency which doesn't require its peerDependency.
   * your environment have these peerDependency installed globally because node will look up dependency all the way to root (but pnpm don't know about it).
+
+### 关于安装完依赖还是找不到包的问题
+
+如果用的WSL+linux安装的依赖，用windows文件系统打开的vscode无法找到依赖。需要vscode链接remote wsl用linux文件系统访问才行
+
+windows shell安装的依赖则两种文件系统都能正常使用
+
+**具体原因后面查**
+
+### window shell 无法找到另一个package

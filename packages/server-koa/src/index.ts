@@ -1,6 +1,8 @@
 import * as Koa from "koa";
 import router from "./router";
 
+import Config from '@ww/tools-config'
+
 import * as cors from "koa-cors";
 import * as mongo from "koa-mongo";
 import * as bodyParser from "koa-bodyparser";
@@ -10,7 +12,7 @@ import * as Router from "@koa/router";
 import errorMiddleware from "./middleware/error";
 import notFoundMiddleware from "./middleware/404";
 
-const config = require('../config');
+const config = new Config(require('../config'));
 
 const PORT = 4000;
 
@@ -24,7 +26,8 @@ app.use(logger());
 app.use(bodyParser({ formLimit: "1mb" }));
 
 /////////mongodb
-const mongoConf: Record<string, any> = config.mongo;
+const mongoConf: Record<string, any> = config.get('mongo');
+
 // mongoose.connect('mongodb://用户名:密码@127.0.0.1:27017/数据库名称')
 const DB_URL = (function () {
   if (mongoConf.user && mongoConf.password) {

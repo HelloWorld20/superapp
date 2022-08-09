@@ -9,11 +9,12 @@
     "sourceMap": true,
     "strictPropertyInitialization": true,
     "strictNullChecks": true,
+    "resolveJsonModule": true,
     "lib": ["es2017"],
     "noImplicitThis": false,
     "baseUrl": "../../",
     "paths": {
-      "ww-*": ["packages/*"]
+      "@ww/*": ["packages/*"]
     }
   },
   "include": ["src"],
