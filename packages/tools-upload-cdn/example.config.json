@@ -1,0 +1,9 @@
+{
+  "cos": {
+    "name": "name",
+    "SecretId": "SecretId",
+    "SecretKey": "SecretKey",
+    "Region": "ap-beijing",
+    "Bucket": "name-1234567890"
+  }
+}
