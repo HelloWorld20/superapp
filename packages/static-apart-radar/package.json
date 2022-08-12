@@ -42,6 +42,7 @@
     "thread-loader": "^2.1.2",
     "ts-loader": "^5.3.3",
     "webpack": "4.28.4",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.2.1"
   }
 }
