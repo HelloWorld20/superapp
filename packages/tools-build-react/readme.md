@@ -56,3 +56,4 @@ module.exports = config;
 
 - 也导出 webpack 本身。省得静态 package 还要安装 webpack
 - 目前各种依赖需要去静态package里安装，不合理
+- webpack.js改为ts，获得参数提醒能力

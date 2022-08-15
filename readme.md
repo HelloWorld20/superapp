@@ -40,6 +40,7 @@ yarn start
 ## todo
 
 1. 目前static-\*\*类型package用tools-build-react时，需要在static-\*\*安装tools-build-react的依赖（打包依赖）。不知如何处理。如果在全局安装打包依赖，则破坏独立结构，或者需要cli来管理。
+2. 需要一个cli工具，根据类型创建模板
 
 
 ## issue

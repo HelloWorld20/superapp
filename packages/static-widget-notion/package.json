@@ -1,5 +1,5 @@
 {
-  "name": "@ww/static-apart-radar",
+  "name": "@ww/static-widget-notion",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,7 +16,6 @@
     "@ww/tools-build-react": "workspace:^1.0.0",
     "@ww/utils-web": "workspace:^1.0.0",
     "antd": "4.10.2",
-    "echarts": "^5.3.3",
     "less": "3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -74,7 +74,6 @@ importers:
       babel-loader: ^8.0.5
       cache-loader: ^2.0.1
       css-loader: ^2.1.1
-      echart: ^0.1.3
       echarts: ^5.3.3
       html-loader: ^0.5.5
       less: 3.0.0
@@ -96,8 +95,68 @@ importers:
       '@ww/tools-build-react': link:../tools-build-react
       '@ww/utils-web': link:../utils-web
       antd: 4.10.2_biqbaboplfbrettd7655fr4n2y
-      echart: 0.1.3
       echarts: 5.3.3
+      less: 3.0.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 5.2.0_react@18.2.0
+      react-router-dom: 5.2.0_react@18.2.0
+      typescript: 4.7.4
+    devDependencies:
+      '@amap/amap-jsapi-loader': 1.0.1
+      '@ant-design/icons': 4.7.0_biqbaboplfbrettd7655fr4n2y
+      '@types/node': 18.6.5
+      '@types/react': 18.0.17
+      '@types/react-dom': 18.0.6
+      '@types/react-router-dom': 5.1.7
+      babel-loader: 8.2.5_2mu7npwojfw54fpowuj2vyc67e
+      cache-loader: 2.0.1_webpack@4.28.4
+      css-loader: 2.1.1_webpack@4.28.4
+      html-loader: 0.5.5
+      less-loader: 4.1.0_less@3.0.0+webpack@4.28.4
+      postcss-loader: 3.0.0
+      style-loader: 0.23.1
+      thread-loader: 2.1.3_webpack@4.28.4
+      ts-loader: 5.4.6_typescript@4.7.4
+      webpack: 4.28.4_webpack-cli@3.3.12
+      webpack-cli: 3.3.12_webpack@4.28.4
+      webpack-dev-server: 3.11.3_lcc62y5swe7vxzrqnnkgs4sf6e
+
+  packages/static-widget-notion:
+    specifiers:
+      '@amap/amap-jsapi-loader': ^1.0.1
+      '@ant-design/icons': ^4.5.0
+      '@babel/core': ^7.3.4
+      '@types/node': ^18.6.4
+      '@types/react': ^18.0.16
+      '@types/react-dom': ^18.0.6
+      '@types/react-router-dom': 5.1.7
+      '@ww/tools-build-react': workspace:^1.0.0
+      '@ww/utils-web': workspace:^1.0.0
+      antd: 4.10.2
+      babel-loader: ^8.0.5
+      cache-loader: ^2.0.1
+      css-loader: ^2.1.1
+      html-loader: ^0.5.5
+      less: 3.0.0
+      less-loader: ^4.1.0
+      postcss-loader: ^3.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      react-router: 5.2.0
+      react-router-dom: 5.2.0
+      style-loader: ^0.23.1
+      thread-loader: ^2.1.2
+      ts-loader: ^5.3.3
+      typescript: ^4.7.4
+      webpack: 4.28.4
+      webpack-cli: ^3.3.12
+      webpack-dev-server: ^3.2.1
+    dependencies:
+      '@babel/core': 7.18.10
+      '@ww/tools-build-react': link:../tools-build-react
+      '@ww/utils-web': link:../utils-web
+      antd: 4.10.2_biqbaboplfbrettd7655fr4n2y
       less: 3.0.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -2127,10 +2186,6 @@ packages:
       warning: 4.0.3
     dev: false
 
-  /any-promise/1.3.0:
-    resolution: {integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=}
-    dev: false
-
   /anymatch/2.0.0:
     resolution: {integrity: sha512-5teOsQWABXHHBFP9y3skS5P3d/WfWXpv3FUpy+LorMrNYaT9pI4oLMQX7jzQ2KklNpGpWHzdCXTDT2Y3XGlZBw==}
     dependencies:
@@ -3861,16 +3916,6 @@ packages:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
 
-  /echart/0.1.3:
-    resolution: {integrity: sha512-DbTrEjHnYrSEqzRBkLhVs0T512ZZwSDW8hIE57lY2Rwui5j6sdFoO37W0tDq/Tb7Q25MaRAwiQMkMCzOX4FjWw==}
-    hasBin: true
-    dependencies:
-      koa: 2.13.4
-      koa-router: 7.4.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /echarts/5.3.3:
     resolution: {integrity: sha512-BRw2serInRwO5SIwRviZ6Xgm5Lb7irgz+sLiFMmy/HOaf4SQ+7oYqxKzRHAKp4xHQ05AuHw1xvoQWJjDQq/FGw==}
     dependencies:
@@ -5492,12 +5537,6 @@ packages:
       copy-to: 2.0.1
     dev: false
 
-  /koa-compose/3.2.1:
-    resolution: {integrity: sha1-qFzLQLfZhtjlo0Wzoazo6rz1Tec=}
-    dependencies:
-      any-promise: 1.3.0
-    dev: false
-
   /koa-compose/4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
     dev: false
@@ -5544,20 +5583,6 @@ packages:
       koa-compose: 4.1.0
       methods: 1.1.2
       path-to-regexp: 6.2.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /koa-router/7.4.0:
-    resolution: {integrity: sha512-IWhaDXeAnfDBEpWS6hkGdZ1ablgr6Q6pGdXCyK38RbzuH4LkUOpPqPw+3f8l8aTDrQmBQ7xJc0bs2yV4dzcO+g==}
-    engines: {node: '>= 4'}
-    dependencies:
-      debug: 3.2.7
-      http-errors: 1.8.1
-      koa-compose: 3.2.1
-      methods: 1.1.2
-      path-to-regexp: 1.8.0
-      urijs: 1.19.11
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -9486,10 +9511,6 @@ packages:
     resolution: {integrity: sha1-mxpSWVIlhZ5V9mnZKPiMbFfyp34=}
     dependencies:
       punycode: 2.1.1
-
-  /urijs/1.19.11:
-    resolution: {integrity: sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==}
-    dev: false
 
   /urix/0.1.0:
     resolution: {integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=}
