@@ -1,7 +1,7 @@
-export default (
+export default function loadScript (
   url: string,
   returnScript?: (script: HTMLScriptElement) => void
-) => {
+): Promise<HTMLScriptElement> {
   return new Promise((resolve, reject) => {
     const script = document.createElement("script");
     script.type = "text/javascript";
