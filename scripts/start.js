@@ -27,7 +27,6 @@ async function getScript() {
 
 async function getShellstr() {
   const script = await getScript();
-  console.log('%c [ script ]-30', 'font-size:13px; background:pink; color:#bf2c9f;', script)
   // 接入concurrent之前，只读第一条命令
   const command = script.project.component
 

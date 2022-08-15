@@ -10,7 +10,7 @@ import { mainDistrict, MainDistrict } from "@/datas/核心位置";
 import "antd/dist/antd.css";
 import "./index.css";
 
-export default () => {
+export default function Community() {
   const [雷达图数据, set雷达数据] = useState<ApartmentData[]>([]);
   const [表格数据, set表格数据] = useState<any[]>([]);
   const [地图数据, set地图数据] = useState<number[][]>([]);
