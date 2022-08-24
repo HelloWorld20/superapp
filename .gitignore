@@ -6,6 +6,7 @@ node_modules
 .vscode
 .eslintcache
 dist
+logs
 .cache-loader
 lerna-debug.log
 package.json.lerna_backup

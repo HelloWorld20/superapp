@@ -38,5 +38,8 @@
     }
   },
   "CDN": "http://app-1234567890.cos.ap-chengdu.myqcloud.com",
-  "allow_origins": ["http://localhost:3000", "http://localhost:3001"]
+  "allow_origins": ["http://localhost:3000", "http://localhost:3001"],
+  "pushserver": {
+    "cid": "cid"
+  }
 }

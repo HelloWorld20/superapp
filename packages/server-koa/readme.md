@@ -16,6 +16,29 @@ pnpm run build
 
 代码生成在`dist`文件夹下
 
+3. 部署
+
+切换到当前目录下
+
+  cd packages/server-koa
+
+打包
+
+pnpm run build
+
+配置config文件
+
+```shell
+  cp example.config.json ./dist/server-koa/config.json
+
+  vim config.json
+```
+
+启动pm2
+
+  pm2 start
+
+
 ## todo
 
 * 支持redis
