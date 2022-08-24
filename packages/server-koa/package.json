@@ -17,6 +17,7 @@
     "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.4",
     "@types/koa__router": "^8.0.7",
+    "@types/mongoose": "^5.11.97",
     "@ww/tools-config": "workspace:^1.0.0",
     "boom": "^7.3.0",
     "koa": "^2.13.1",
@@ -24,7 +25,8 @@
     "koa-cors": "^0.0.16",
     "koa-logger": "^3.2.1",
     "koa-mongo": "1.9.2",
-    "koa-router": "^10.1.1"
+    "koa-router": "^10.1.1",
+    "mongoose": "^6.5.2"
   },
   "keywords": [],
   "author": "",

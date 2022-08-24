@@ -19,7 +19,7 @@ const PORT = 4000;
 const app = new Koa();
 
 const rootRouter = new Router({
-  prefix: "/api/demo",  // TODO: prefix抽离成配置
+  prefix: "/api/widget/notion",  // TODO: prefix抽离成配置
 });
 
 app.use(logger());
@@ -31,11 +31,28 @@ const mongoConf: Record<string, any> = config.get('mongo');
 // mongoose.connect('mongodb://用户名:密码@127.0.0.1:27017/数据库名称')
 const DB_URL = (function () {
   if (mongoConf.user && mongoConf.password) {
-    return `mongodb://${mongoConf.user}:${mongoConf.password}@${mongoConf.host}:${mongoConf.port}/admin`;
+    return `mongodb://${mongoConf.user}:${mongoConf.password}@${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
   } else {
-    return `mongodb://${mongoConf.host}:${mongoConf.port}/admin`;
+    return `mongodb://${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
   }
 })();
+
+// const mongoose = require('mongoose').set('debug', true);
+// // const options = {
+// //     autoReconnect: true
+// // }
+
+// function connect() {
+//   mongoose.connect(DB_URL)
+//   let db = mongoose.connection
+//   db.on('error', console.error.bind(console, '连接错误:'));
+//   db.once('open', () => {
+//     console.log('mongodb connect suucess');
+//   })
+// }
+
+// connect();
+
 console.log("DB_URL", DB_URL);
 
 app.use(mongo({ uri: DB_URL }));

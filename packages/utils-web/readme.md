@@ -4,11 +4,17 @@
 
 ### dev
 
-如果有要开发此库的代码
+其他package安装此package
 
-  cd packages/uitls-web
+```shell
+pnpm add @ww/utils-web -r --filter @ww/static-apart-radar
+```
 
-  pnpm run dev
+package 内引用即可
+
+```javascript
+import { loadScript } from '@ww/utils-web'
+```
 
 ### build
 
