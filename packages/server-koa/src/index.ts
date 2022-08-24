@@ -1,7 +1,6 @@
 import * as Koa from "koa";
 import router from "./router";
-
-import Config from '@ww/tools-config'
+import config from './config';
 
 import * as cors from "koa-cors";
 import * as mongo from "koa-mongo";
@@ -12,7 +11,6 @@ import * as Router from "@koa/router";
 import errorMiddleware from "./middleware/error";
 import notFoundMiddleware from "./middleware/404";
 
-const config = new Config(require('../config'));
 
 const PORT = 4000;
 
