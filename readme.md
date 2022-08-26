@@ -3,23 +3,11 @@
 基于pnpm workspace的monorepo: superapp，所有项目的综合项目
 
 
-
-<!-- ## packages
-
-* config: 配置中心
-* framework: 基于express的后端框架以及工具函数
-* server: 后端接口服务
-* static-apart-radar: 广州看房dashboard
-* tools-build: 基于webpack4的打包工具
-* tools-upload-cdn: 上传cdn工具
-* utils: 通用工具函数
-
-
 ## 运行
 
 yarn start
 
-询问试启动项目 -->
+询问试启动项目
 
 ## 常用命令
 
@@ -41,7 +29,7 @@ yarn start
 
 1. 目前static-\*\*类型package用tools-build-react时，需要在static-\*\*安装tools-build-react的依赖（打包依赖）。不知如何处理。如果在全局安装打包依赖，则破坏独立结构，或者需要cli来管理。
 2. 需要一个cli工具，根据类型创建模板
-
+3. 实现一个trigger-condition-task的scheduler，用于爬虫
 
 ## issue
 

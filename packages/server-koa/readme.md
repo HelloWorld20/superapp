@@ -24,12 +24,20 @@ pnpm run build
 
 打包
 
-pnpm run build
+  pnpm build
+
+还要打包@ww/tools-config
+
+```shell
+cd packages/server-koa
+
+pnpm build
+```
 
 配置config文件
 
 ```shell
-  cp example.config.json ./dist/server-koa/config.json
+  cp example.config.json config.json
 
   vim config.json
 ```
