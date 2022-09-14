@@ -5,7 +5,7 @@
  */
 
 import config from '../config';
-import mongoose, { Model, Document, Schema, FilterQuery } from 'mongoose'
+import mongoose, { Model, Document, Schema, FilterQuery, SchemaDefinition } from 'mongoose'
 
 type Condition = FilterQuery<Document<any, any, any>>;
 
@@ -21,8 +21,7 @@ const DB_URL = (function () {
 })();
 
 export default class Mongo {
-  constructor(collection: string, model: any) {
-    console.log('new twice')
+  constructor(collection: string, model: SchemaDefinition) {
     if (this.isConnected) return;
 
     if (process.env.NODE_ENV === 'development') {
@@ -54,7 +53,7 @@ export default class Mongo {
   find(condition: Condition = {}) {
     if (!this.model) return this.__throw_not_ready_error__();
 
-    return this.model.find(condition);
+    return this.model.find(condition, { _id: 0, __v: 0 });
   }
   /**
    * 插入一条记录
@@ -71,7 +70,7 @@ export default class Mongo {
    * @param value 
    * @returns 
    */
-  update(condition: Condition = {}, value: Record<string, any>) {
+  update(condition: Condition, value: Record<string, any>) {
     if (!this.model) return this.__throw_not_ready_error__();
     this.model.updateOne(condition, value)
   }
