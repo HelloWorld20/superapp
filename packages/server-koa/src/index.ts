@@ -1,9 +1,7 @@
 import * as Koa from "koa";
 import router from "./router";
-import config from './config';
 
 import * as cors from "koa-cors";
-import * as mongo from "koa-mongo";
 import * as bodyParser from "koa-bodyparser";
 import * as logger from "koa-logger";
 import * as Router from "@koa/router";
@@ -23,37 +21,6 @@ const rootRouter = new Router({
 app.use(logger());
 app.use(bodyParser({ formLimit: "1mb" }));
 
-/////////mongodb
-const mongoConf: Record<string, any> = config.get('mongo');
-
-// mongoose.connect('mongodb://用户名:密码@127.0.0.1:27017/数据库名称')
-const DB_URL = (function () {
-  if (mongoConf.user && mongoConf.password) {
-    return `mongodb://${mongoConf.user}:${mongoConf.password}@${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
-  } else {
-    return `mongodb://${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
-  }
-})();
-
-// const mongoose = require('mongoose').set('debug', true);
-// // const options = {
-// //     autoReconnect: true
-// // }
-
-// function connect() {
-//   mongoose.connect(DB_URL)
-//   let db = mongoose.connection
-//   db.on('error', console.error.bind(console, '连接错误:'));
-//   db.once('open', () => {
-//     console.log('mongodb connect suucess');
-//   })
-// }
-
-// connect();
-
-console.log("DB_URL", DB_URL);
-
-app.use(mongo({ uri: DB_URL }));
 
 app.use(cors({ origin: "*" }));
 

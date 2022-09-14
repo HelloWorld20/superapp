@@ -5,46 +5,70 @@
  */
 
 import * as Router from "@koa/router";
+import db_test from '../db/test'
 // import RES from '../utils/service-error'
+
+// import mongoose from "mongoose";
 
 const router = new Router();
 
-router.get("/get", async (ctx, next) => {
-  const collection = ctx.mongo.db("admin").collection("temps");
-  const condition = {
-    age: 20,
-  };
 
-  try {
-    const info = await collection.find(condition).toArray();
-    ctx.status = 200;
-    ctx.body = { data: info };
-  } catch (error) {
-    console.log(error);
+router.get('/get', async (ctx, next) => {
 
-    throw new Error(error as any);
-  }
+  const msg = await db_test.find({ name: 'wei' })
+
+  console.log('%c [ msg ]-29', 'font-size:13px; background:pink; color:#bf2c9f;', msg)
+  ctx.body = msg
 
   await next();
+})
 
-  // throw RES.GENERAL.SERVER_ERROR;
-});
+router.get('/set', async (ctx, next) => {
 
-router.get("/set", async (ctx, next) => {
-  const collection = ctx.mongo.db("admin").collection("temps");
-  const condition = {
-    id: "123",
-  };
+  const msg = await db_test.insert({ name: 'wang', age: 20 })
 
-  collection.update(condition, {
-    extra: Math.random(),
-  });
-  ctx.status = 200;
-  ctx.body = { data: "ok" };
+  console.log('%c [ msg ]-29', 'font-size:13px; background:pink; color:#bf2c9f;', msg)
+  ctx.body = msg
+
   await next();
+})
 
-  // ctx.throw(400, "name require");
-});
+// router.get("/get", async (ctx, next) => {
+//   const collection = ctx.mongo.db("admin").collection("temps");
+//   const condition = {
+//     age: 20,
+//   };
+
+//   try {
+//     const info = await collection.find(condition).toArray();
+//     ctx.status = 200;
+//     ctx.body = { data: info };
+//   } catch (error) {
+//     console.log(error);
+
+//     throw new Error(error as any);
+//   }
+
+//   await next();
+
+//   // throw RES.GENERAL.SERVER_ERROR;
+// });
+
+// router.get("/set", async (ctx, next) => {
+//   const collection = ctx.mongo.db("admin").collection("temps");
+//   const condition = {
+//     id: "123",
+//   };
+
+//   collection.update(condition, {
+//     extra: Math.random(),
+//   });
+//   ctx.status = 200;
+//   ctx.body = { data: "ok" };
+//   await next();
+
+//   // ctx.throw(400, "name require");
+// });
 
 export default router;
 
