@@ -4,6 +4,7 @@ import App from './App'
 
 import WeatherGetter from './widgets/weather/getter'
 import WeatherSetter from './widgets/weather/setter'
+import WeatherList from './widgets/weather/list'
 
 export default function () {
 
@@ -12,8 +13,9 @@ export default function () {
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/" element={<WeatherSetter />}></Route>
-          <Route path="weather/set" element={<WeatherSetter />}></Route>
-          <Route path="weather/get" element={<WeatherGetter />}></Route>
+          <Route path="/weather/set" element={<WeatherSetter />}></Route>
+          <Route path="/weather/list" element={<WeatherList />}></Route>
+          <Route path="/weather/:id" element={<WeatherGetter />}></Route>
         </Route>
       </Routes>
     </HashRouter>

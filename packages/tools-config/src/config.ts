@@ -1,15 +1,13 @@
-/*
- * @Author: jianghong.wei
- * @Date: 2020-12-29 00:24:46
- * @Last Modified by: jianghong.wei
- * @Last Modified time: 2021-03-29 23:23:01
+/**
+ * 配置读取封装
+ * @author jianghong.wei
+ * @since 2022-09-15 11:46:58
  */
 
-import * as fs from "fs";
 
 export default class Config {
   config: Record<string, any> = {};
-  constructor(input: string | Record<string, any>) {
+  constructor(input: string) {
     if (typeof input === "string") {
       this.config = Config.loadJSON(input);
     } else {
@@ -17,9 +15,9 @@ export default class Config {
     }
   }
 
-  static loadJSON(filename: string) {
+  static loadJSON(config: string) {
     try {
-      const content = fs.readFileSync(filename, "utf8");
+      const content = JSON.parse(config);
       return JSON.parse(content);
     } catch (error) {
       return {};

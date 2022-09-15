@@ -49,118 +49,125 @@ const ERR = {
       });
     },
 
-    get NOT_FOUND() {
-      return Boom.notFound("未找到页面");
+    NOT_FOUND(msg?: string, code?: string) {
+      return Boom.notFound(msg || "未找到页面", { code: code || '404' });
     },
+
+    FORBIDDEN(msg?: string, code?: string) {
+      return Boom.forbidden(msg || '拒绝操作', { code: code || '403' })
+    }
+
   },
 
-  USER: {
-    get SHARED_ALREADY() {
-      return {
-        code: "0001",
-        msg: "已经分享过了，无法添加生命",
-      };
-    },
 
-    get NOT_FOUND() {
-      return Boom.notFound("找不到用户", {
-        code: "0002",
-      });
-    },
 
-    get UNAUTHORIZED() {
-      // Boom.unauthorized 不能达到应用的返回值需求，需要手动创建
-      return new Boom("未登录", {
-        statusCode: 401,
-        data: {
-          code: "0003",
-        },
-      });
-    },
+  // USER: {
+  //   get SHARED_ALREADY() {
+  //     return {
+  //       code: "0001",
+  //       msg: "已经分享过了，无法添加生命",
+  //     };
+  //   },
 
-    get FORBIDDEN() {
-      return new Boom("无权限", {
-        statusCode: 403,
-        data: {
-          code: "0004",
-        },
-      });
-    },
+  //   get NOT_FOUND() {
+  //     return Boom.notFound("找不到用户", {
+  //       code: "0002",
+  //     });
+  //   },
 
-    get INVALID_PWD() {
-      return Boom.badRequest("密码错误", {
-        code: "0005",
-      });
-    },
-  },
+  //   get UNAUTHORIZED() {
+  //     // Boom.unauthorized 不能达到应用的返回值需求，需要手动创建
+  //     return new Boom("未登录", {
+  //       statusCode: 401,
+  //       data: {
+  //         code: "0003",
+  //       },
+  //     });
+  //   },
 
-  INVITATION: {
-    get NOT_FOUND() {
-      return Boom.notFound("邀请码无效", {
-        code: "0100",
-      });
-    },
+  //   get FORBIDDEN() {
+  //     return new Boom("无权限", {
+  //       statusCode: 403,
+  //       data: {
+  //         code: "0004",
+  //       },
+  //     });
+  //   },
 
-    get USED() {
-      return Boom.conflict("用户已使用这一邀请码", {
-        code: "0101",
-      });
-    },
+  //   get INVALID_PWD() {
+  //     return Boom.badRequest("密码错误", {
+  //       code: "0005",
+  //     });
+  //   },
+  // },
 
-    get TRY_USING_OWN_CODE() {
-      return Boom.conflict("不能使用自己的邀请码", {
-        code: "0102",
-      });
-    },
+  // INVITATION: {
+  //   get NOT_FOUND() {
+  //     return Boom.notFound("邀请码无效", {
+  //       code: "0100",
+  //     });
+  //   },
 
-    get NOT_GENERATED() {
-      return Boom.badImplementation("邀请码还没生成", {
-        code: "0103",
-      });
-    },
-  },
-  UPLOAD: {
-    get FAILED() {
-      return Boom.serverUnavailable("文件上传服务出错", {
-        code: "0201",
-      });
-    },
-  },
-  BASIC: {
-    get NO_USER() {
-      return Boom.notFound("找不到用户", {
-        code: "-99",
-      });
-    },
-    get NOT_FOUND() {
-      return Boom.notFound("无数据", {
-        code: "-1",
-      });
-    },
+  //   get USED() {
+  //     return Boom.conflict("用户已使用这一邀请码", {
+  //       code: "0101",
+  //     });
+  //   },
 
-    get NO_LIFE() {
-      return Boom.notAcceptable("生命值不足", {
-        code: "-1",
-      });
-    },
-    get NO_REDPACK() {
-      return Boom.notAcceptable("红包不足", {
-        code: "0300",
-      });
-    },
-  },
-  GAME: {
-    get GAME_END() {
-      return Boom.notAcceptable("当前这轮游戏已结束", {
-        code: "-1",
-      });
-    },
-    get ALLREADY_SEND() {
-      return Boom.notAcceptable("已获取过题目", {
-        code: "-2",
-      });
-    },
-  },
+  //   get TRY_USING_OWN_CODE() {
+  //     return Boom.conflict("不能使用自己的邀请码", {
+  //       code: "0102",
+  //     });
+  //   },
+
+  //   get NOT_GENERATED() {
+  //     return Boom.badImplementation("邀请码还没生成", {
+  //       code: "0103",
+  //     });
+  //   },
+  // },
+  // UPLOAD: {
+  //   get FAILED() {
+  //     return Boom.serverUnavailable("文件上传服务出错", {
+  //       code: "0201",
+  //     });
+  //   },
+  // },
+  // BASIC: {
+  //   get NO_USER() {
+  //     return Boom.notFound("找不到用户", {
+  //       code: "-99",
+  //     });
+  //   },
+  //   get NOT_FOUND() {
+  //     return Boom.notFound("无数据", {
+  //       code: "-1",
+  //     });
+  //   },
+
+  //   get NO_LIFE() {
+  //     return Boom.notAcceptable("生命值不足", {
+  //       code: "-1",
+  //     });
+  //   },
+  //   get NO_REDPACK() {
+  //     return Boom.notAcceptable("红包不足", {
+  //       code: "0300",
+  //     });
+  //   },
+  // },
+  // GAME: {
+  //   get GAME_END() {
+  //     return Boom.notAcceptable("当前这轮游戏已结束", {
+  //       code: "-1",
+  //     });
+  //   },
+  //   get ALLREADY_SEND() {
+  //     return Boom.notAcceptable("已获取过题目", {
+  //       code: "-2",
+  //     });
+  //   },
+  // },
 };
 
 export default ERR;

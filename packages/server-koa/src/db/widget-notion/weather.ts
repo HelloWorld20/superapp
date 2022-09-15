@@ -15,6 +15,8 @@ const MODEL = {
   dataColor: String,  // 字体颜色
   width: Number,  // 宽
   height: Number, // 高
+  createTime: Date,
+  updateTime: Date,
   // 以下都是来自官网，预留，暂不存储
   aqiColor: String, // 空气质量文字颜色
   border: Number,

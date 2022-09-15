@@ -5,7 +5,7 @@ import * as response from '../../utils/response'
 
 const router = new Router();
 
-
+/** 获取列表 */
 router.get('/list', async (ctx, next) => {
 
   let res = await db.find();
@@ -16,15 +16,31 @@ router.get('/list', async (ctx, next) => {
   response.json(ctx, res);
 })
 
+/** 新增 */
 router.post('/:id', async (ctx, next) => {
   const { id } = ctx.params;
   const { key } = ctx.request.body as any;
 
-  db.insert({ id, key })
+  let res = await db.find({ id })
+
+  if (res) {
+    res = Array.from(res);
+    if (res.length > 0) {
+      throw RES.GENERAL.FORBIDDEN('已存在相同记录')
+    }
+  }
+  const { name, width, height, layout, background, dataColor } = ctx.request.body as any;
+
+  const updateTime = new Date();
+  const createTime = updateTime;
+
+
+  db.insert({ id, key, name, width, height, layout, background, dataColor, createTime, updateTime })
 
   response.success(ctx)
 })
 
+// 获取单个
 router.get('/:id', async (ctx, next) => {
   const { id } = ctx.params;
 
@@ -33,9 +49,9 @@ router.get('/:id', async (ctx, next) => {
 
   res = Array.from(res);
 
-  if (res.length === 0) throw RES.GENERAL.NOT_FOUND;
+  if (res.length === 0) throw RES.GENERAL.NOT_FOUND('未找到记录');
 
-  response.json(ctx, res);
+  response.json(ctx, res[0]);
 })
 
 
