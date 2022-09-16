@@ -136,6 +136,7 @@ importers:
       '@types/react-dom': ^18.0.6
       '@ww/tools-build-react': workspace:^1.0.0
       '@ww/tools-config': workspace:^1.0.0
+      '@ww/tools-upload-cdn': workspace:^1.0.0
       '@ww/utils-web': workspace:^1.0.0
       antd: 4.10.2
       axios: ^0.27.2
@@ -161,6 +162,7 @@ importers:
       '@babel/core': 7.18.10
       '@ww/tools-build-react': link:../tools-build-react
       '@ww/tools-config': link:../tools-config
+      '@ww/tools-upload-cdn': link:../tools-upload-cdn
       '@ww/utils-web': link:../utils-web
       antd: 4.10.2_biqbaboplfbrettd7655fr4n2y
       axios: 0.27.2

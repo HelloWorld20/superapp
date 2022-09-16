@@ -46,6 +46,7 @@ module.exports = (rawConfigs, staticConfigsPath) => {
             "Content-Type,Content-Length,Accept,X-Requested-With",
           "Access-Control-Allow-Methods": "PUT,POST,GET,DELETE,OPTIONS",
         },
+        historyApiFallback: true
       },
       rawConfigs.devServer
     ),
@@ -58,7 +59,7 @@ module.exports = (rawConfigs, staticConfigsPath) => {
     output: {
       path: configs.distDir,
       // 资源发布的路径
-      publicPath: isDev ? undefined : `${configs.cdnPrefix || ""}`,
+      publicPath: isDev ? '/' : `${configs.cdnPrefix || ""}`,
       filename: `[name].[hash:10].js`,
     },
     resolve: {

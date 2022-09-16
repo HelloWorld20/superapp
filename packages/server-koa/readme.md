@@ -8,15 +8,19 @@
 
 1. 本地开发
 
-pnpm run dev
+  pnpm run dev
 
 2. 打包生产代码
 
-pnpm run build
+  pnpm run build
 
 代码生成在`dist`文件夹下
 
 3. 部署
+
+确保所有依赖已经安装
+
+  pnpm i
 
 切换到当前目录下
 
