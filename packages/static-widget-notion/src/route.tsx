@@ -11,11 +11,17 @@ export default function () {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="/" element={<WeatherSetter />}></Route>
-          <Route path="/weather/set" element={<WeatherSetter />}></Route>
-          <Route path="weather/list" element={<WeatherList />}></Route>
-          <Route path="/weather/:id" element={<WeatherGetter />}></Route>
+        <Route path="/widget/notion" element={<App />}>
+          {/* /widget/notion */}
+          <Route path="" element={<WeatherSetter />}></Route>
+          <Route path="weather">
+            {/* /widget/notion/weather */}
+            <Route path="" element={<WeatherSetter />}></Route>
+            {/* /widget/notion/weather/set */}
+            <Route path="set" element={<WeatherSetter />}></Route>
+            <Route path="list" element={<WeatherList />}></Route>
+            <Route path=":id" element={<WeatherGetter />}></Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

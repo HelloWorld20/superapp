@@ -28,11 +28,12 @@ const NewCmp = () => {
   useEffect(() => {
     if (!loading) {
       if (data) {
+        const { clientHeight, clientWidth } = window.document.body;
         window.WIDGET = {
           CONFIG: {
             layout: data.layout,
-            width: window.screen.width + "",
-            height: window.screen.height + '',
+            width: clientWidth + "",
+            height: clientHeight + '',
             background: data.background,
             dataColor: data.dataColor,
             key: data.id

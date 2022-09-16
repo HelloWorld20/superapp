@@ -24,7 +24,7 @@ class Uploader {
             this.cos.sliceUploadFile({
                 Bucket: this.config.Bucket, // Bucket 格式：test-1250000000
                 Region: this.config.Region,
-                Key: `/app/${fileName}`,
+                Key: `/${fileName}`,
                 FilePath: filePath
             }, function (err, data) {
                 if (err) {
@@ -64,7 +64,7 @@ class Uploader {
                             var isFile = stats.isFile();//是文件
                             var isDir = stats.isDirectory();//是文件夹
                             if (isFile) {
-                                this.uploadFile(filedir, `${this.config.name}/${filename}`)
+                                this.uploadFile(filedir, `${filename}`)
                             }
                             if (isDir) {
                                 this.uploadFolder(filedir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件

@@ -59,7 +59,7 @@ module.exports = (rawConfigs, staticConfigsPath) => {
     output: {
       path: configs.distDir,
       // 资源发布的路径
-      publicPath: isDev ? '/' : `${configs.cdnPrefix || ""}`,
+      publicPath: isDev ? '/' : `${configs.cdnPrefix || "/"}`,
       filename: `[name].[hash:10].js`,
     },
     resolve: {
