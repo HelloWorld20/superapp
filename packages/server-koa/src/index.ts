@@ -1,6 +1,5 @@
 import * as Koa from "koa";
 import router from "./router";
-import config from './config';
 
 import * as cors from "koa-cors";
 import * as mongo from "koa-mongo";
