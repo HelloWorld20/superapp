@@ -17,7 +17,7 @@ const PORT = 4000;
 const app = new Koa();
 
 const rootRouter = new Router({
-  prefix: "/api/widget/notion",  // TODO: prefix抽离成配置
+  // prefix: "/api/widget/notion",  // TODO: prefix抽离成配置
 });
 
 app.use(logger());
@@ -34,22 +34,6 @@ const DB_URL = (function () {
     return `mongodb://${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
   }
 })();
-
-// const mongoose = require('mongoose').set('debug', true);
-// // const options = {
-// //     autoReconnect: true
-// // }
-
-// function connect() {
-//   mongoose.connect(DB_URL)
-//   let db = mongoose.connection
-//   db.on('error', console.error.bind(console, '连接错误:'));
-//   db.once('open', () => {
-//     console.log('mongodb connect suucess');
-//   })
-// }
-
-// connect();
 
 console.log("DB_URL", DB_URL);
 
