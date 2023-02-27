@@ -15,7 +15,7 @@ const router = new Router();
 
 router.get('/get', async (ctx, next) => {
 
-  const msg = await db_test.find({ name: 'wei' })
+  const msg = await db_test.find({ version: '1.0.0' })
 
   console.log('%c [ msg ]-29', 'font-size:13px; background:pink; color:#bf2c9f;', msg)
   ctx.body = msg

@@ -4,7 +4,7 @@ const model = {
   age: Number,
   name: String
 };
-const COLLECTION = 'people';
+const COLLECTION = 'configs';
 
 const db_test = new Mongo(COLLECTION, model);
 

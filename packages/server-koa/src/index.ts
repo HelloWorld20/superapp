@@ -2,14 +2,12 @@ import * as Koa from "koa";
 import router from "./router";
 
 import * as cors from "koa-cors";
-import * as mongo from "koa-mongo";
 import * as bodyParser from "koa-bodyparser";
 import * as logger from "koa-logger";
 import * as Router from "@koa/router";
 
 import errorMiddleware from "./middleware/error";
 import notFoundMiddleware from "./middleware/404";
-
 
 const PORT = 4000;
 
@@ -21,22 +19,6 @@ const rootRouter = new Router({
 
 app.use(logger());
 app.use(bodyParser({ formLimit: "1mb" }));
-
-/////////mongodb
-const mongoConf: Record<string, any> = config.get('mongo');
-
-// mongoose.connect('mongodb://用户名:密码@127.0.0.1:27017/数据库名称')
-const DB_URL = (function () {
-  if (mongoConf.user && mongoConf.password) {
-    return `mongodb://${mongoConf.user}:${mongoConf.password}@${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
-  } else {
-    return `mongodb://${mongoConf.host}:${mongoConf.port}/${mongoConf.dbname}`;
-  }
-})();
-
-console.log("DB_URL", DB_URL);
-
-app.use(mongo({ uri: DB_URL }));
 
 app.use(cors({ origin: "*" }));
 
@@ -64,7 +46,6 @@ app.use(rootRouter.routes());
 ///////// 404中间件
 app.use(notFoundMiddleware);
 ///////// 404中间件 end
-
 
 app.listen(PORT, () => {
   console.log(`server-koa 启动于:${PORT}`);
