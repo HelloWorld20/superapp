@@ -71,6 +71,7 @@ module.exports = function (env, configs) {
   // }
   return [new HtmlWebpackPlugin({
     template: configs.resolve.template.source + '/index.html',
-    chunks: configs.resolve.template.chunks
+    chunks: configs.resolve.template.chunks,
+    inject: 'body'
   })];
 };

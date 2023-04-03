@@ -58,6 +58,8 @@ module.exports = (rawConfigs, staticConfigsPath) => {
     entry: configs.entry,
     output: {
       path: configs.distDir,
+      // libraryTarget: 'umd',
+      // globalObject: 'window',
       // 资源发布的路径
       publicPath: isDev ? '/' : `${configs.cdnPrefix || "/"}`,
       filename: `[name].[hash:10].js`,
