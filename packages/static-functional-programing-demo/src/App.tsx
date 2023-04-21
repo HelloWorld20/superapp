@@ -11,6 +11,9 @@ export default function App() {
         <li>
           <Link to="/swr/multi-child">swr/multi-child</Link>
         </li>
+        <li>
+          <Link to="/storage">storage</Link>
+        </li>
       </ul>
       <Outlet />
     </>

@@ -18,7 +18,7 @@ export default function useLocalStorage(key: string, initialValue?: string) {
   };
 
   const setValue = (val: string) => {
-    // setState(val);
+    setState(val);
     window.localStorage.setItem(key, val);
   };
 
