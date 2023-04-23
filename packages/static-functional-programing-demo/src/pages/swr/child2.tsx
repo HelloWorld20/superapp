@@ -7,8 +7,8 @@ export default function SWR() {
 
   return (
     <fieldset name="child2">
-      <legend>child2</legend>
-      <h2>response data: {data && data[0].timestame!}</h2>
+      <legend>table body</legend>
+      <h2> {data && data[0].timestame!}</h2>
     </fieldset>
   );
 }
